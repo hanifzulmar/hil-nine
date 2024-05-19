@@ -35,6 +35,7 @@ document.addEventListener('click', function(e) {
     if(!sb.contains(e.target) && !searchform.contains(e.target)) {
         searchform.classList.remove('active');
     }
+
     if(!sc.contains(e.target) && !shoppingcart.contains(e.target)) {
         shoppingcart.classList.remove('active');
     }
@@ -42,12 +43,12 @@ document.addEventListener('click', function(e) {
 
 
 // modal box
-const itemdetailmodal = document.querySelector('#item-detail-modal');
-const itemdetailbuttons = document.querySelectorAll('.item-detail-button');
+const itemDetailModal = document.querySelector('#item-detail-modal');
+const itemDetailButtons = document.querySelectorAll('.item-detail-button');
 
-itemdetailbuttons.forEach((btn) => {
+itemDetailButtons.forEach((btn) => {
     btn.onclick = (e) => {
-        itemdetailmodal.style.display = 'flex';
+        itemDetailModal.style.display = 'flex';
         e.preventDefault();
     };
 });
@@ -55,13 +56,13 @@ itemdetailbuttons.forEach((btn) => {
 
 // klik tombol close 
 document.querySelector('.modal .close-icon').onclick = (e) => {
-    itemdetailmodal.style.display = 'none';
+    itemDetailModal.style.display = 'none';
     e.preventDefault();
 };
 
 // klik di luar modal
 window.onclick = (e) => {
-    if (e.target === itemdetailmodal) {
-        itemdetailmodal.style.display = 'none';
+    if (e.target === itemDetailModal) {
+        itemDetailModal.style.display = 'none';
     }
 };
