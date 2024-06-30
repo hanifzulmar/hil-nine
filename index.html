@@ -131,28 +131,39 @@
   <!--menu section start-->
   <section id="Menu" class="menu">
     <h2><span>Menu</span> Kami</h2>
-    <p>Berbagai macam menu kami</p>
 
-    <div class="row">
-      <div class="menu-card">
-        <img src="img/menu/risol.jpg" alt="Risol Mayo" class="menu-card-img">
-        <h3 class="menu-card-title">- Risol Mayo -</h3>
-        <p class="menu-card-price">IDR 10K</p>
+    <div class="card-group">
+      <div class="card">
+        <img src="img/menu/risol.jpg">
+        <div class="layer"></div>
+        <div class="info">
+          <h1>Risol mayo</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ullam perferendis vitae provident! Odio, commodi.</p>
+        </div>
       </div>
-      <div class="menu-card">
-        <img src="img/menu/cheese roll.jpg" alt="Cheese Roll" class="menu-card-img">
-        <h3 class="menu-card-title">- Cheese Roll -</h3>
-        <p class="menu-card-price">IDR 10K</p>
+      <div class="card">
+        <img src="img/menu/cheese roll.jpg">
+        <div class="layer"></div>
+        <div class="info">
+          <h1>Cheese Roll</h1>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim cumque nemo saepe. Voluptatibus, sint voluptatum!</p>
+        </div>
       </div>
-      <div class="menu-card">
-        <img src="img/menu/menu dimsum.jpg" alt="Dimsum" class="menu-card-img">
-        <h3 class="menu-card-title">- Dimsum -</h3>
-        <p class="menu-card-price">IDR 10K</p>
+      <div class="card">
+        <img src="img/menu/menu dimsum.jpg">
+        <div class="layer"></div>
+        <div class="info">
+          <h1>Dimsum</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eum, odit quibusdam exercitationem earum natus.</p>
+        </div>
       </div>
-      <div class="menu-card">
-        <img src="img/menu/piscok.jpg" alt="Piscok" class="menu-card-img">
-        <h3 class="menu-card-title">- Piscok -</h3>
-        <p class="menu-card-price">IDR 10K</p>
+      <div class="card">
+        <img src="img/menu/piscok.jpg">
+        <div class="layer"></div>
+        <div class="info">
+          <h1>Piscok</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quae aperiam, voluptates doloribus fuga corrupti.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -171,12 +182,6 @@
               <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <use href="img/feather-sprite.svg#shopping-cart" />
-              </svg>
-            </a>
-            <a href="#" class="item-detail-button">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round">
-                <use href="img/feather-sprite.svg#eye" />
               </svg>
             </a>
           </div>
@@ -223,21 +228,33 @@
     <div class="row">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3733814604307!2d106.8406049733409!3d-6.214390193773538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f4751e3c4b65%3A0x682a00917b673936!2sUniversitas%20Teknologi%20Muhammadiyah%20Jakarta!5e0!3m2!1sid!2sid!4v1713792966455!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"class="map"></iframe>
 
-      <form action="">
+      <form onsubmit="sendMessage()">
         <div class="input-group">
           <i data-feather="user"></i>
-          <input type="text" placeholder="nama">
+          <input type="text" id="name" placeholder="Name" required>
         </div>
         <div class="input-group">
           <i data-feather="mail"></i>
-          <input type="text" placeholder="email">
+          <input type="text" id="email" placeholder="email" required>
         </div>
         <div class="input-group">
-          <i data-feather="phone"></i>
-          <input type="text" placeholder="no hp">
+          <i data-feather="message-circle"></i>
+          <input type="text" id="message" placeholder="message" required>
         </div>
         <button type="submit" class="btn">kirim pesan</button>
       </form>
+
+      <script>
+        function sendMessage() {
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const message = document.getElementById("message").value;
+
+          const url = "https://api.whatsapp.com/send?phone=6287783960833&text=Halo%20admin%0Asaya%20*"+ name +"*%0AEmail%20saya%20*"+ email +"*%0A%0A*"+message+"*";
+
+          window.open(url);
+        }
+      </script>
 
     </div>
   </section>
